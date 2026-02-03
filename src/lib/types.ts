@@ -11,7 +11,9 @@ export interface Product {
 
 export interface CartItem {
   product: Product;
-  quantity: number; // in grams
+  packSize: number;     // 100,200,500,1000
+  packCount: number;    // 1,2,3...
+  quantity: number;     // total grams (packSize * packCount)
   price: number;
 }
 
