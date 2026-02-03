@@ -1,6 +1,7 @@
 import { X, ShoppingCart, Trash2, MessageCircle, ArrowLeft, AlertTriangle } from 'lucide-react';
 import { useCart } from '@/context/CartContext';
-import { generateWhatsAppMessage, WHATSAPP_NUMBER, BULK_ORDER_THRESHOLD, quantityOptions } from '@/lib/data';
+import { generateWhatsAppMessage, WHATSAPP_NUMBER, BULK_ORDER_THRESHOLD, quantityOptions, getCategoryEmoji } from '@/lib/data';
+import { productImages } from '@/lib/productImages';
 import { useState } from 'react';
 
 const CartPanel = () => {
@@ -194,8 +195,18 @@ const CartPanel = () => {
                   className="flex gap-4 p-3 bg-muted rounded-xl"
                 >
                   {/* Product Image */}
-                  <div className="w-16 h-16 rounded-lg bg-gradient-to-br from-organic-green to-leaf-green flex items-center justify-center flex-shrink-0">
-                    <span className="text-2xl">🌿</span>
+                  <div className="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0 bg-muted">
+                    {productImages[item.product.id] ? (
+                      <img 
+                        src={productImages[item.product.id]} 
+                        alt={item.product.name}
+                        className="w-full h-full object-cover"
+                      />
+                    ) : (
+                      <div className="w-full h-full bg-gradient-to-br from-organic-green to-leaf-green flex items-center justify-center">
+                        <span className="text-2xl">{getCategoryEmoji(item.product.category)}</span>
+                      </div>
+                    )}
                   </div>
 
                   {/* Product Info */}

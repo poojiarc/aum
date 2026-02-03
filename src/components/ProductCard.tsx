@@ -1,7 +1,8 @@
 import { useState } from 'react';
-import { Plus, Minus, ShoppingCart, Info, X } from 'lucide-react';
+import { Plus, Minus, ShoppingCart, Info } from 'lucide-react';
 import { Product } from '@/lib/types';
 import { quantityOptions, calculatePrice, getCategoryEmoji, getCategoryLabel } from '@/lib/data';
+import { productImages } from '@/lib/productImages';
 import { useCart } from '@/context/CartContext';
 import {
   Dialog,
@@ -33,33 +34,43 @@ const ProductCard = ({ product }: ProductCardProps) => {
     addToCart(product, selectedQuantity);
   };
 
-  // Generate a consistent color based on product name
-  const getProductColor = (name: string) => {
-    const colors = [
-      'from-green-400 to-emerald-500',
-      'from-orange-400 to-amber-500',
-      'from-red-400 to-rose-500',
-      'from-purple-400 to-violet-500',
-      'from-yellow-400 to-amber-500',
-      'from-teal-400 to-cyan-500',
-    ];
-    const index = name.charCodeAt(0) % colors.length;
-    return colors[index];
+  // Get product image or fallback
+  const productImage = productImages[product.id];
+
+  // Generate a consistent color based on product category for fallback
+  const getCategoryColor = (category: string) => {
+    switch (category) {
+      case 'vegetable': return 'from-orange-400 to-amber-500';
+      case 'leafy': return 'from-green-400 to-emerald-500';
+      case 'fruit': return 'from-red-400 to-rose-500';
+      default: return 'from-green-400 to-emerald-500';
+    }
   };
 
   return (
     <>
       <div className="card-organic p-4 flex flex-col h-full">
-        {/* Product Image Placeholder */}
+        {/* Product Image */}
         <div className="relative mb-4">
-          <div 
-            className={`aspect-square rounded-xl bg-gradient-to-br ${getProductColor(product.name)} flex items-center justify-center overflow-hidden`}
-          >
-            <div className="text-center text-white">
-              <span className="text-5xl mb-2 block">{getCategoryEmoji(product.category)}</span>
-              <span className="text-xs font-medium opacity-80">Organic Powder</span>
+          {productImage ? (
+            <div className="aspect-square rounded-xl overflow-hidden bg-white">
+              <img 
+                src={productImage} 
+                alt={product.name}
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                loading="lazy"
+              />
             </div>
-          </div>
+          ) : (
+            <div 
+              className={`aspect-square rounded-xl bg-gradient-to-br ${getCategoryColor(product.category)} flex items-center justify-center overflow-hidden`}
+            >
+              <div className="text-center text-white">
+                <span className="text-5xl mb-2 block">{getCategoryEmoji(product.category)}</span>
+                <span className="text-xs font-medium opacity-80">Organic Powder</span>
+              </div>
+            </div>
+          )}
           
           {/* Premium Badge */}
           {isPremium && (
@@ -78,7 +89,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
           </button>
 
           {/* Category Tag */}
-          <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 px-3 py-1 bg-card rounded-full shadow-soft text-xs font-medium text-muted-foreground">
+          <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 px-3 py-1 bg-card rounded-full shadow-soft text-xs font-medium text-muted-foreground whitespace-nowrap">
             {getCategoryLabel(product.category)}
           </div>
         </div>
@@ -151,7 +162,18 @@ const ProductCard = ({ product }: ProductCardProps) => {
             </DialogDescription>
           </DialogHeader>
           
-          <div className="space-y-4 pt-4">
+          {/* Product Image in Modal */}
+          {productImage && (
+            <div className="aspect-video rounded-xl overflow-hidden bg-muted">
+              <img 
+                src={productImage} 
+                alt={product.name}
+                className="w-full h-full object-cover"
+              />
+            </div>
+          )}
+          
+          <div className="space-y-4 pt-2">
             <div>
               <h4 className="font-semibold text-sm text-muted-foreground mb-1">✨ Benefits</h4>
               <p className="text-foreground">{product.benefits}</p>
