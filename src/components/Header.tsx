@@ -196,19 +196,25 @@ const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <a href="#home" className="flex items-center gap-3 group">
-            <img
-              src={logo}
-              alt="AUM Organic Powders"
-              className="h-12 md:h-14 w-auto object-contain"
-            />
-            <div className="hidden sm:block">
-              <h1 className="font-display text-lg md:text-xl font-bold text-primary drop-shadow-sm leading-tight">
-                AUM <span className="text-gold-glow">Organic</span>
-              </h1>
-              <p className="text-xs text-muted-foreground">Powders</p>
-            </div>
-          </a>
+          {/* Logo */}
+<a href="#home" className="flex items-center gap-3 group">
+  <img
+    src={logo}
+    alt="AUM Organic Powders"
+    className="h-12 md:h-14 w-auto object-contain"
+  />
+
+  {/* ✅ SHOW ON MOBILE TOO */}
+  <div className="block">
+    <h1 className="font-display text-base sm:text-lg md:text-xl font-bold text-primary drop-shadow-sm leading-tight">
+      AUM <span className="text-gold-glow">Organic</span>
+    </h1>
+    <p className="text-[11px] sm:text-xs text-muted-foreground">
+      Powders
+    </p>
+  </div>
+</a>
+
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-1">
