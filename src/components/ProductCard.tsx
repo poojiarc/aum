@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Plus, Minus, ShoppingCart, Info } from 'lucide-react';
+import { Plus, Minus, ShoppingCart, Info, Sparkles, Apple, ChefHat } from 'lucide-react';
 import { Product } from '@/lib/types';
 import { quantityOptions, calculatePrice, getCategoryEmoji, getCategoryLabel } from '@/lib/data';
 import { productImages } from '@/lib/productImages';
@@ -53,13 +53,31 @@ const ProductCard = ({ product }: ProductCardProps) => {
         {/* Product Image */}
         <div className="relative mb-4">
           {productImage ? (
-            <div className="aspect-square rounded-xl overflow-hidden bg-white">
+            <div className="aspect-square rounded-xl overflow-hidden bg-white group/image relative">
               <img 
                 src={productImage} 
                 alt={product.name}
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                 loading="lazy"
               />
+              
+              {/* Hover Info Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-transparent opacity-0 group-hover/image:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
+                <div className="transform translate-y-4 group-hover/image:translate-y-0 transition-transform duration-300 space-y-2">
+                  <div className="flex items-start gap-2">
+                    <Sparkles className="w-4 h-4 text-gold flex-shrink-0 mt-0.5" />
+                    <p className="text-white text-xs line-clamp-2">{product.benefits.split(',')[0]}</p>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <Apple className="w-4 h-4 text-organic-green flex-shrink-0 mt-0.5" />
+                    <p className="text-white/80 text-xs line-clamp-2">{product.nutrition.split(',')[0]}</p>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <ChefHat className="w-4 h-4 text-secondary flex-shrink-0 mt-0.5" />
+                    <p className="text-white/80 text-xs line-clamp-1">{product.uses.split(',')[0]}</p>
+                  </div>
+                </div>
+              </div>
             </div>
           ) : (
             <div 

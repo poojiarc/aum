@@ -1,4 +1,4 @@
-import { Home, FileText, Settings, Info, Phone, Facebook, Instagram, Linkedin, Youtube } from 'lucide-react';
+import { Home, FileText, Settings, Info, Phone, Facebook, Instagram, Youtube } from 'lucide-react';
 import logo from '@/assets/logo.jpg';
 
 const Footer = () => {
@@ -21,7 +21,6 @@ const Footer = () => {
   const socialLinks = [
     { label: 'Facebook', icon: Facebook, href: '#' },
     { label: 'Instagram', icon: Instagram, href: '#' },
-    { label: 'LinkedIn', icon: Linkedin, href: '#' },
     { label: 'YouTube', icon: Youtube, href: '#' },
   ];
 

@@ -190,7 +190,7 @@ const Header = () => {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
           ? 'bg-card/95 backdrop-blur-md shadow-card'
-          : 'bg-gradient-to-b from-white/90 via-white/70 to-transparent backdrop-blur-sm'
+          : 'bg-gradient-to-b from-white/90 via-white/70 to-transparent backdrop-blur-sm mt-10'
       }`}
     >
       <div className="container mx-auto px-4">

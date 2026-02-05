@@ -81,7 +81,7 @@ export const services = [
   { icon: '🌱', title: 'Solar Drying', description: 'Natural solar dehydration preserves maximum nutrition and flavor' },
   { icon: '🥬', title: 'Dehydration Processing', description: 'Advanced processing techniques for premium quality powders' },
   { icon: '📦', title: 'Bulk Supply', description: 'Large quantity orders for businesses and institutions' },
-  { icon: '🌍', title: 'Bulk & Export Orders', description: 'International shipping and custom pricing for exports' },
+  { icon: '🌍', title: 'Bulk Orders & Customized Requirements', description: 'Custom pricing and tailored solutions for your needs' },
   { icon: '🧪', title: 'Quality Testing', description: 'Rigorous quality control and lab testing for purity' },
   { icon: '🚚', title: 'Distribution', description: 'Reliable delivery network across India and worldwide' },
   { icon: '🏭', title: 'Custom Orders', description: 'Tailored solutions for specific product requirements' },

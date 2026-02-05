@@ -1,4 +1,4 @@
-import { Phone, Mail, MapPin, Clock, Facebook, Instagram, Linkedin, Youtube } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, Facebook, Instagram, Youtube } from 'lucide-react';
 import { WHATSAPP_NUMBER } from '@/lib/data';
 
 const ContactSection = () => {
@@ -14,7 +14,6 @@ const ContactSection = () => {
   const socialLinks = [
     { label: 'Facebook', icon: Facebook, href: '#', color: 'hover:bg-blue-600' },
     { label: 'Instagram', icon: Instagram, href: '#', color: 'hover:bg-gradient-to-br hover:from-purple-600 hover:to-pink-500' },
-    { label: 'LinkedIn', icon: Linkedin, href: '#', color: 'hover:bg-blue-700' },
     { label: 'YouTube', icon: Youtube, href: '#', color: 'hover:bg-red-600' },
   ];
 
