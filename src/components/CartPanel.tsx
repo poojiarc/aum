@@ -513,6 +513,18 @@ const CartPanel = () => {
         {/* Footer */}
         {items.length > 0 && (
           <div className="border-t p-4 space-y-4">
+            {/* Free Shipping Notice */}
+            {totalPrice >= 999 ? (
+              <div className="bg-organic-green/10 border border-organic-green/30 rounded-xl p-3 text-sm text-center">
+                <span className="text-organic-green font-semibold">🎉 You qualify for FREE SHIPPING!</span>
+              </div>
+            ) : (
+              <div className="bg-secondary/10 border border-secondary/30 rounded-xl p-3 text-sm text-center">
+                <span className="text-muted-foreground">Add ₹{999 - totalPrice} more for </span>
+                <span className="text-gold font-semibold">FREE SHIPPING</span>
+              </div>
+            )}
+            
             <div className="flex justify-between text-sm">
               <span>Total Weight</span>
               <span>
