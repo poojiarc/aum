@@ -108,6 +108,13 @@ import mangoplumPowder from '@/assets/products/mangoplum.jpg'; // Fallback image
 /* ✅ NEW IMPORTS */
 import gonguraPowder from '@/assets/products/gongura-powder.jpg';
 import sapotaPowder from '@/assets/products/sapotapowder.png';
+import papayaLeafImg from '../assets/products/papaya-leaf-powder.jpg';
+import greenBananaImg from '../assets/products/green banana.jpg';
+import gingerImg from '../assets/products/ginger-powder.jpg';
+import curryLeafImg from '../assets/products/curry-leaf-powder.jpg';
+import betelLeafImg from '../assets/products/beetle leaf powder.jpg';
+import amchurImg from '../assets/products/amchur poder.jpg';
+
 
 export const productImages: Record<string, string> = {
   carrot: carrotPowder,
@@ -144,11 +151,18 @@ export const productImages: Record<string, string> = {
   /* ✅ UPDATED WITH REAL IMAGES */
   gongura: gonguraPowder,
   sapota: sapotaPowder,
-
+  
   /* Optional fallback */
   palak: spinachPowder,
   thotakura: spinachPowder,
   chukka: spinachPowder,
   prunes: cranberryPowder,
   mangoplum: mangoplumPowder,
+    'papaya-leaf': papayaLeafImg,
+  'green-banana': greenBananaImg,
+  ginger: gingerImg,
+  'curry-leaf': curryLeafImg,
+  'betel-leaf': betelLeafImg,
+  amchur: amchurImg,
+  
 };
