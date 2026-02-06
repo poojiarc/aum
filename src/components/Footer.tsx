@@ -1,5 +1,6 @@
 import { Home, FileText, Settings, Info, Phone, Facebook, Instagram, Youtube } from 'lucide-react';
 import logo from '@/assets/logo.jpg';
+import TrustBadges from './TrustBadges';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -35,6 +36,16 @@ const Footer = () => {
       </div>
 
       <div className="relative container mx-auto px-4 py-16">
+        {/* Trust Badges Section */}
+        <div className="mb-12 pb-8 border-b border-white/10">
+          <h4 className="font-display text-lg font-semibold mb-6 text-center flex items-center justify-center gap-2">
+            <span className="w-8 h-0.5 bg-gold rounded" />
+            Certified & Trusted
+            <span className="w-8 h-0.5 bg-gold rounded" />
+          </h4>
+          <TrustBadges variant="footer" />
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Brand Column */}
           <div className="space-y-4">

@@ -1,4 +1,5 @@
 import { AlertTriangle, Sun, Shield, Heart, Globe } from 'lucide-react';
+import TrustBadges from './TrustBadges';
 
 const storySteps = [
   {
@@ -132,6 +133,22 @@ const AboutSection = () => {
           </div>
         </div>
         
+        {/* Quality & Compliance Section */}
+        <div className="mt-20">
+          <div className="text-center mb-10">
+            <span className="inline-block px-4 py-1.5 bg-organic-green/10 text-organic-green rounded-full text-sm font-medium mb-4">
+              Quality & Compliance
+            </span>
+            <h3 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-3">
+              Certified for <span className="text-organic-green">Your Safety</span>
+            </h3>
+            <p className="text-muted-foreground max-w-xl mx-auto">
+              Every batch of AUM Organic Powder is tested and certified to ensure the highest quality and safety standards.
+            </p>
+          </div>
+          <TrustBadges variant="default" />
+        </div>
+
         {/* Slogan */}
         <div className="text-center mt-16">
           <div className="inline-flex items-center gap-4 px-8 py-4 bg-muted rounded-full">
