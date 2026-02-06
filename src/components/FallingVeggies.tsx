@@ -37,8 +37,8 @@ const FallingVeggies = () => {
       item.className = "falling-item";
 
       item.style.left = Math.random() * 100 + "vw";
-      item.style.animationDuration = 4 + Math.random() * 4 + "s";
-      item.style.opacity = (0.5 + Math.random() * 0.5).toString();
+      item.style.animationDuration = 8 + Math.random() * 4 + "s";
+      item.style.opacity = (0.15 + Math.random() * 0.15).toString();
       item.style.width = 30 + Math.random() * 30 + "px";
 
       container.appendChild(item);
