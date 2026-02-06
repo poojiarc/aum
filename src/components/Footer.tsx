@@ -5,11 +5,11 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const quickLinks = [
-    { label: 'Home', href: '#home', icon: Home },
-    { label: 'Menu', href: '#menu', icon: FileText },
-    { label: 'Services', href: '#services', icon: Settings },
-    { label: 'About', href: '#about', icon: Info },
-    { label: 'Contact', href: '#contact', icon: Phone },
+    { label: 'Home', href: '/#home', icon: Home },
+    { label: 'Menu', href: '/#menu', icon: FileText },
+    { label: 'Services', href: '/#services', icon: Settings },
+    { label: 'About', href: '/#about', icon: Info },
+    { label: 'Contact', href: '/#contact', icon: Phone },
   ];
 
   const categories = [

@@ -11,13 +11,13 @@ import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
 import CartPanel from '@/components/CartPanel';
 import WhatsAppButton from '@/components/WhatsAppButton';
-import IntroAnimation from '@/components/IntroAnimation';
+
 import FreeShippingBanner from '@/components/FreeShippingBanner';
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
-      <IntroAnimation />
+      
       <FreeShippingBanner />
       <FallingVeggies />
       <Header />

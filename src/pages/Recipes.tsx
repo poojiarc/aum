@@ -6,7 +6,7 @@ import Footer from '@/components/Footer';
 
 const Recipes = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background pt-24">
       <Header />
       
       {/* Hero Section */}

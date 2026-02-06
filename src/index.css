@@ -85,6 +85,34 @@
     opacity: 0;
   }
 }
+/* Fix anchor scroll hidden under fixed header */
+#home,
+#menu,
+#services,
+#about,
+#contact,
+#recipes {
+  scroll-margin-top: 90px;
+}
+/* ===== Recipes Auto Scroll ===== */
+
+@keyframes recipeScroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-recipe-scroll {
+  animation: recipeScroll 30s linear infinite;
+}
+
+.animate-recipe-scroll:hover {
+  animation-play-state: paused;
+}
 
 .animate-fall {
   animation: fall 8s linear infinite;

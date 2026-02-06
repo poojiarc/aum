@@ -158,11 +158,11 @@ import { useCart } from '@/context/CartContext';
 import logo from '@/assets/logo.jpg';
 
 const navItems = [
-  { label: 'Home', href: '#home', icon: Home },
-  { label: 'Menu', href: '#menu', icon: FileText },
-  { label: 'Services', href: '#services', icon: Settings },
-  { label: 'About Us', href: '#about', icon: Info },
-  { label: 'Contact', href: '#contact', icon: Phone },
+  { label: 'Home', href: '/#home', icon: Home },
+  { label: 'Menu', href: '/#menu', icon: FileText },
+  { label: 'Services', href: '/#services', icon: Settings },
+  { label: 'About Us', href: '/#about', icon: Info },
+  { label: 'Contact', href: '/#contact', icon: Phone },
 ];
 
 const Header = () => {
