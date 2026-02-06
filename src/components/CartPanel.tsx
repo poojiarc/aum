@@ -325,6 +325,7 @@ import {
 } from '@/lib/data';
 import { productImages } from '@/lib/productImages';
 import { useState } from 'react';
+import TrustBadges from './TrustBadges';
 
 const CartPanel = () => {
   const {
@@ -546,6 +547,9 @@ const CartPanel = () => {
               <MessageCircle className="w-5 h-5" />
               Order via WhatsApp
             </button>
+
+            {/* Trust Badges */}
+            <TrustBadges variant="inline" className="pt-2" />
 
             <button
               onClick={() => setIsCartOpen(false)}
