@@ -1,7 +1,6 @@
 export interface Product {
   id: string;
   name: string;
-  teluguName: string;
   category: 'vegetable' | 'leafy' | 'fruit';
   pricePerGram: number;
   benefits: string;
