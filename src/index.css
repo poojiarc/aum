@@ -75,6 +75,39 @@
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
+@keyframes fall {
+  from {
+    transform: translateY(-100px);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(110vh);
+    opacity: 0;
+  }
+}
+
+.animate-fall {
+  animation: fall 8s linear infinite;
+}
+/* Falling Veggies Animation */
+
+.falling-item {
+  position: absolute;
+  top: -50px;
+  pointer-events: none;
+  animation-name: fallDown;
+  animation-timing-function: linear;
+}
+
+@keyframes fallDown {
+  0% {
+    transform: translateY(-60px) rotate(0deg);
+  }
+
+  100% {
+    transform: translateY(110vh) rotate(360deg);
+  }
+}
 
   .dark {
     --background: 215 50% 10%;
