@@ -1551,7 +1551,64 @@ export const recipes: Recipe[] = [
       'ABC for skin and blood health',
       'Amla for immunity, Ginger for digestion'
     ]
-  }
+  },
+  {
+  id: 41,
+  name: 'AUM Power Mix – Daily Wellness Schedule',
+  category: 'Health Plan',
+  time: 'All Day',
+  image: aumPowerMix,
+  powder: 'Multiple AUM Powders',
+  powderId: 'power-mix',
+  description:
+    'Complete day-to-night wellness routine using AUM organic powders for detox, immunity, digestion, skin glow, and deep repair.',
+  ingredients: [
+    'AUM ABC Powder',
+    'AUM Amla Powder',
+    'AUM Ginger Powder',
+    'AUM Moringa Powder',
+    'AUM Spinach Powder',
+    'AUM Beetroot Powder',
+    'AUM Curry Leaf Powder',
+    'AUM Mint Powder',
+    'AUM Banana Powder',
+    'AUM Papaya Leaf Powder',
+    'AUM Neem Powder',
+    'Honey',
+    'Warm water / Milk / Buttermilk'
+  ],
+  steps: [
+    '🌅 Morning (6:30–8:00 AM): Mix Amla + Ginger in warm water. Add Moringa/Spinach to breakfast batter.',
+    '☀️ Mid-Morning (11:00 AM): Mix ABC Powder with water and lemon.',
+    '🍛 Lunch (1:00–2:00 PM): Add Curry Leaf + Mint to buttermilk. Use Tomato/Amchur in dal.',
+    '☕ Afternoon (4:00 PM): Mix Banana or Apple powder in milk/smoothie.',
+    '🌙 Evening (Weekly): Apply Neem + Betel mask or Papaya + Kothimeera mask.',
+    '🍲 Dinner (7:30–8:30 PM): Add Banana powder to soup or sambar.',
+    '💤 Night: Mix Papaya Leaf + Moringa in warm water before bed.'
+  ],
+  nutrition: {
+    calories: 'Varies',
+    protein: 'Balanced',
+    fiber: 'High',
+    vitamins: [
+      'Vitamin C',
+      'Iron',
+      'Calcium',
+      'Antioxidants',
+      'Potassium',
+      'Beta-carotene'
+    ]
+  },
+  tips: [
+    'Follow daily for best long-term benefits',
+    'Use warm water, not hot',
+    'Stay consistent for 30 days',
+    'Drink plenty of water throughout the day',
+    'Adjust quantities as per body needs'
+  ]
+}
+
+
 ];
 
 export const getRecipeById = (id: number): Recipe | undefined => {

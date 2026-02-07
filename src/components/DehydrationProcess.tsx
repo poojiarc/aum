@@ -179,7 +179,7 @@
                  </div>
                  
                  {/* Image Preview */}
-                 <div className="hidden lg:block">
+                 <div className="block">
                    <div 
                      className={`relative rounded-3xl overflow-hidden shadow-elevated transition-all duration-700 ${
                        index === activeStep 

@@ -2,6 +2,16 @@ import { Product, CartItem } from './types';
 
 // Product data with pricing - ORDERED AS SPECIFIED
 export const products: Product[] = [
+  { 
+    id: 'abc', 
+    name: 'ABC Powder (Apple-Beetroot-Carrot Mix)', 
+    category: 'premix', 
+    pricePerGram: 4, 
+    benefits: 'Immunity booster blend of Apple, Beetroot, and Carrot', 
+    nutrition: 'High in Vitamin C, Iron, Beta-carotene, Antioxidants', 
+    uses: 'Daily health drink, smoothies, supplements',
+    ingredients: 'Apple, Beetroot, Carrot'
+  },
 
   // ========== RAW VEG POWDERS ==========
   { 
@@ -56,7 +66,7 @@ export const products: Product[] = [
   },
   { 
     id: 'green-banana', 
-    name: 'Green Banana Powder (Pachi Arati Pandu)', 
+    name: 'Green Banana Powder (Arati kaya)', 
     category: 'vegetable', 
     pricePerGram: 2, 
     benefits: 'Improves gut health, controls sugar levels, boosts energy', 
@@ -118,7 +128,7 @@ export const products: Product[] = [
   },
   { 
     id: 'kothimeera', 
-    name: 'Kothimeera Powder (Kothimeera Aaku)', 
+    name: 'Coriander Powder (Kothimeera/Dhaniyala podi)', 
     category: 'leafy', 
     pricePerGram: 2, 
     benefits: 'Detoxifies heavy metals, aids digestion, rich in antioxidants', 
@@ -128,7 +138,7 @@ export const products: Product[] = [
   },
   { 
     id: 'gongura', 
-    name: 'Gongura Powder (Gongura Aaku)', 
+    name: 'Sorrel Leaves Powder (Gongura Aaku)', 
     category: 'leafy', 
     pricePerGram: 2, 
     benefits: 'Aids digestion, rich in iron, traditional Andhra superfood', 
@@ -138,7 +148,7 @@ export const products: Product[] = [
   },
   { 
     id: 'thotakura', 
-    name: 'Thotakura Powder (Thotakura Aaku)', 
+    name: 'Amaranthus Powder (Thotakura)', 
     category: 'leafy', 
     pricePerGram: 2, 
     benefits: 'Rich in calcium, improves bone health, boosts immunity', 
@@ -220,16 +230,7 @@ export const products: Product[] = [
   },
 
   // ========== AUM PREMIX ==========
-  { 
-    id: 'abc', 
-    name: 'ABC Powder (Amla-Beetroot-Carrot Mix)', 
-    category: 'premix', 
-    pricePerGram: 4, 
-    benefits: 'Immunity booster blend of Amla, Beetroot, and Carrot', 
-    nutrition: 'High in Vitamin C, Iron, Beta-carotene, Antioxidants', 
-    uses: 'Daily health drink, smoothies, supplements',
-    ingredients: 'Amla, Beetroot, Carrot'
-  },
+  
 ];
 
 

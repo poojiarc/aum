@@ -53,7 +53,7 @@ const ServicesSection = () => {
               🌍 Bulk & Export Orders
             </h3>
             <p className="text-primary/80 mb-4">
-              Looking for large quantity orders? We offer custom pricing for bulk and export orders above 25kg.
+              Looking for large quantity orders? We offer custom pricing for bulk and export orders.
             </p>
             <button 
               onClick={() => document.getElementById('menu')?.scrollIntoView({ behavior: 'smooth' })}

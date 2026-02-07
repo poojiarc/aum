@@ -1,4 +1,189 @@
-import { Home, FileText, Settings, Info, Phone, Facebook, Instagram, Youtube } from 'lucide-react';
+// import { Home, FileText, Settings, Info, Phone, Facebook, Instagram, Youtube } from 'lucide-react';
+// import logo from '@/assets/logo.jpg';
+// import TrustBadges from './TrustBadges';
+
+// const Footer = () => {
+//   const currentYear = new Date().getFullYear();
+
+//   const quickLinks = [
+//     { label: 'Home', href: '/#home', icon: Home },
+//     { label: 'Menu', href: '/#menu', icon: FileText },
+//     { label: 'Services', href: '/#services', icon: Settings },
+//     { label: 'About', href: '/#about', icon: Info },
+//     { label: 'Contact', href: '/#contact', icon: Phone },
+//   ];
+
+//   const categories = [
+//     { label: 'Vegetables', emoji: '🥕', href: '#menu' },
+//     { label: 'Leafy', emoji: '🌿', href: '#menu' },
+//     { label: 'Fruits', emoji: '🍎', href: '#menu' },
+//   ];
+
+//   const socialLinks = [
+//     { label: 'Facebook', icon: Facebook, href: '#' },
+//     { label: 'Instagram', icon: Instagram, href: '#' },
+//     { label: 'YouTube', icon: Youtube, href: '#' },
+//   ];
+
+//   return (
+//     <footer className="relative bg-gradient-blue text-white overflow-hidden">
+//       {/* Leaf Texture Overlay */}
+//       <div className="absolute inset-0 opacity-5">
+//         <div className="absolute inset-0" style={{
+//           backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 Q45 20 30 35 Q15 20 30 5' fill='none' stroke='%23ffffff' stroke-width='1'/%3E%3C/svg%3E")`,
+//           backgroundSize: '60px 60px'
+//         }} />
+//       </div>
+
+//       <div className="relative container mx-auto px-4 py-16">
+//         {/* Trust Badges Section */}
+//         <div className="mb-12 pb-8 border-b border-white/10">
+//           <h4 className="font-display text-lg font-semibold mb-6 text-center flex items-center justify-center gap-2">
+//             <span className="w-8 h-0.5 bg-gold rounded" />
+//             Certified & Trusted
+//             <span className="w-8 h-0.5 bg-gold rounded" />
+//           </h4>
+//           <TrustBadges variant="footer" />
+//         </div>
+
+//         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+//           {/* Brand Column */}
+//           <div className="space-y-4">
+//             <div className="flex items-center gap-3">
+//               <img src={logo} alt="AUM Organic Powders" className="h-14 w-auto rounded-lg" />
+//               <div>
+//                 <h3 className="font-display text-xl font-bold">
+//                   AUM <span className="text-gold-light">Organic</span>
+//                 </h3>
+//                 <p className="text-sm text-white/60">Powders</p>
+//               </div>
+//             </div>
+//             <p className="text-white/70 text-sm leading-relaxed">
+//               Straight from farm, preserved for the world. We deliver 100% natural, 
+//               solar-dried organic powders rich in nutrition.
+//             </p>
+//             <div className="pt-2">
+//               <p className="text-sm text-white/60">
+//                 1kg raw produce = 100g powder = Same Nutrition
+//               </p>
+//             </div>
+//           </div>
+
+//           {/* Quick Links */}
+//           <div>
+//             <h4 className="font-display text-lg font-semibold mb-4 flex items-center gap-2">
+//               <span className="w-8 h-0.5 bg-gold rounded" />
+//               Quick Links
+//             </h4>
+//             <ul className="space-y-2">
+//               {quickLinks.map((link) => (
+//                 <li key={link.label}>
+//                   <a 
+//                     href={link.href}
+//                     className="flex items-center gap-2 text-white/70 hover:text-gold-light transition-colors text-sm group"
+//                   >
+//                     <link.icon className="w-4 h-4 group-hover:scale-110 transition-transform" />
+//                     {link.label}
+//                   </a>
+//                 </li>
+//               ))}
+//             </ul>
+//           </div>
+
+//           {/* Categories */}
+//           <div>
+//             <h4 className="font-display text-lg font-semibold mb-4 flex items-center gap-2">
+//               <span className="w-8 h-0.5 bg-gold rounded" />
+//               Categories
+//             </h4>
+//             <ul className="space-y-2">
+//               {categories.map((cat) => (
+//                 <li key={cat.label}>
+//                   <a 
+//                     href={cat.href}
+//                     className="flex items-center gap-2 text-white/70 hover:text-gold-light transition-colors text-sm"
+//                   >
+//                     <span>{cat.emoji}</span>
+//                     {cat.label} Powders
+//                   </a>
+//                 </li>
+//               ))}
+//             </ul>
+
+//             <div className="mt-6">
+//               <h5 className="font-semibold text-sm mb-2">Business Hours</h5>
+//               <p className="text-white/60 text-xs">Wed–Sun: 10AM–8PM</p>
+//               <p className="text-white/60 text-xs">Mon–Tue: Closed</p>
+//             </div>
+//           </div>
+
+//           {/* Contact & Social */}
+//           <div>
+//             <h4 className="font-display text-lg font-semibold mb-4 flex items-center gap-2">
+//               <span className="w-8 h-0.5 bg-gold rounded" />
+//               Contact Us
+//             </h4>
+//             <div className="space-y-3 text-sm text-white/70">
+//               <p className="flex items-start gap-2">
+//                 <span>📱</span>
+//                 <a href="tel:+918985350182" className="hover:text-gold-light transition-colors">
+//                   +91 8985350182
+//                 </a>
+//               </p>
+//               <p className="flex items-start gap-2">
+//                 <span>📧</span>
+//                 <a href="mailto:hariharatraders01@gmail.com" className="hover:text-gold-light transition-colors break-all">
+//                   hariharatraders01@gmail.com
+//                 </a>
+//               </p>
+//               <p className="flex items-start gap-2">
+//                 <span>📍</span>
+//                 <span>Sambasiva Pet, Guntur – 522001</span>
+//               </p>
+//             </div>
+
+//             {/* Social Links */}
+//             <div className="mt-6">
+//               <h5 className="font-semibold text-sm mb-3">Follow Us</h5>
+//               <div className="flex gap-3">
+//                 {socialLinks.map((social) => (
+//                   <a
+//                     key={social.label}
+//                     href={social.href}
+//                     aria-label={social.label}
+//                     className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-gold hover:scale-110 transition-all duration-300"
+//                   >
+//                     <social.icon className="w-5 h-5" />
+//                   </a>
+//                 ))}
+//               </div>
+//             </div>
+//           </div>
+//         </div>
+
+//         {/* Bottom Bar */}
+//         <div className="mt-12 pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-white/50">
+//           <p>© {currentYear} AUM Organic Powders. All rights reserved.</p>
+//           <p>Straight from Farm, Preserved for World.</p>
+//         </div>
+//       </div>
+//     </footer>
+//   );
+// };
+
+// export default Footer;
+
+import {
+  Home,
+  FileText,
+  Settings,
+  Info,
+  Phone,
+  Facebook,
+  Instagram,
+  Youtube,
+} from 'lucide-react';
+
 import logo from '@/assets/logo.jpg';
 import TrustBadges from './TrustBadges';
 
@@ -19,153 +204,148 @@ const Footer = () => {
     { label: 'Fruits', emoji: '🍎', href: '#menu' },
   ];
 
+  // ✅ Real Social Links
   const socialLinks = [
-    { label: 'Facebook', icon: Facebook, href: '#' },
-    { label: 'Instagram', icon: Instagram, href: '#' },
-    { label: 'YouTube', icon: Youtube, href: '#' },
+    {
+      label: 'Facebook',
+      icon: Facebook,
+      href: 'https://www.facebook.com/share/1QWzv6aZrU/',
+    },
+    {
+      label: 'Instagram',
+      icon: Instagram,
+      href: 'https://www.instagram.com/aum__organics/',
+    },
+    {
+      label: 'YouTube',
+      icon: Youtube,
+      href: 'https://www.youtube.com/@AUMOrganicPowders',
+    },
   ];
 
   return (
-    <footer className="relative bg-gradient-blue text-white overflow-hidden">
-      {/* Leaf Texture Overlay */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 Q45 20 30 35 Q15 20 30 5' fill='none' stroke='%23ffffff' stroke-width='1'/%3E%3C/svg%3E")`,
-          backgroundSize: '60px 60px'
-        }} />
-      </div>
+    <footer className="bg-gradient-blue text-white">
 
-      <div className="relative container mx-auto px-4 py-16">
-        {/* Trust Badges Section */}
-        <div className="mb-12 pb-8 border-b border-white/10">
-          <h4 className="font-display text-lg font-semibold mb-6 text-center flex items-center justify-center gap-2">
-            <span className="w-8 h-0.5 bg-gold rounded" />
-            Certified & Trusted
-            <span className="w-8 h-0.5 bg-gold rounded" />
-          </h4>
+      <div className="container mx-auto px-4 py-16">
+
+        {/* Trust Badges */}
+        <div className="mb-12 border-b border-white/10 pb-8">
           <TrustBadges variant="footer" />
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
-          {/* Brand Column */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
+
+          {/* Brand */}
           <div className="space-y-4">
+
             <div className="flex items-center gap-3">
-              <img src={logo} alt="AUM Organic Powders" className="h-14 w-auto rounded-lg" />
+              <img
+                src={logo}
+                alt="AUM Organic"
+                className="h-14 rounded-lg"
+              />
+
               <div>
-                <h3 className="font-display text-xl font-bold">
-                  AUM <span className="text-gold-light">Organic</span>
+                <h3 className="font-bold text-xl">
+                  AUM <span className="text-gold">Organic</span>
                 </h3>
                 <p className="text-sm text-white/60">Powders</p>
               </div>
             </div>
-            <p className="text-white/70 text-sm leading-relaxed">
-              Straight from farm, preserved for the world. We deliver 100% natural, 
-              solar-dried organic powders rich in nutrition.
+
+            <p className="text-white/70 text-sm">
+              100% Natural, Solar Dried Organic Powders.
             </p>
-            <div className="pt-2">
-              <p className="text-sm text-white/60">
-                1kg raw produce = 100g powder = Same Nutrition
-              </p>
-            </div>
+
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-display text-lg font-semibold mb-4 flex items-center gap-2">
-              <span className="w-8 h-0.5 bg-gold rounded" />
-              Quick Links
-            </h4>
-            <ul className="space-y-2">
+
+            <h4 className="font-semibold mb-4">Quick Links</h4>
+
+            <ul className="space-y-2 text-sm">
+
               {quickLinks.map((link) => (
                 <li key={link.label}>
-                  <a 
+                  <a
                     href={link.href}
-                    className="flex items-center gap-2 text-white/70 hover:text-gold-light transition-colors text-sm group"
+                    className="flex gap-2 hover:text-gold"
                   >
-                    <link.icon className="w-4 h-4 group-hover:scale-110 transition-transform" />
+                    <link.icon size={16} />
                     {link.label}
                   </a>
                 </li>
               ))}
+
             </ul>
           </div>
 
           {/* Categories */}
           <div>
-            <h4 className="font-display text-lg font-semibold mb-4 flex items-center gap-2">
-              <span className="w-8 h-0.5 bg-gold rounded" />
-              Categories
-            </h4>
-            <ul className="space-y-2">
+
+            <h4 className="font-semibold mb-4">Categories</h4>
+
+            <ul className="space-y-2 text-sm">
+
               {categories.map((cat) => (
                 <li key={cat.label}>
-                  <a 
-                    href={cat.href}
-                    className="flex items-center gap-2 text-white/70 hover:text-gold-light transition-colors text-sm"
-                  >
-                    <span>{cat.emoji}</span>
-                    {cat.label} Powders
+                  <a href={cat.href} className="hover:text-gold">
+                    {cat.emoji} {cat.label}
                   </a>
                 </li>
               ))}
+
             </ul>
 
-            <div className="mt-6">
-              <h5 className="font-semibold text-sm mb-2">Business Hours</h5>
-              <p className="text-white/60 text-xs">Wed–Sun: 10AM–8PM</p>
-              <p className="text-white/60 text-xs">Mon–Tue: Closed</p>
+            <div className="mt-6 text-xs text-white/60">
+              <p>Wed–Sun: 10AM–8PM</p>
+              <p>Mon–Tue: Closed</p>
             </div>
+
           </div>
 
-          {/* Contact & Social */}
+          {/* Contact + Social */}
           <div>
-            <h4 className="font-display text-lg font-semibold mb-4 flex items-center gap-2">
-              <span className="w-8 h-0.5 bg-gold rounded" />
-              Contact Us
-            </h4>
-            <div className="space-y-3 text-sm text-white/70">
-              <p className="flex items-start gap-2">
-                <span>📱</span>
-                <a href="tel:+918985350182" className="hover:text-gold-light transition-colors">
-                  +91 8985350182
-                </a>
-              </p>
-              <p className="flex items-start gap-2">
-                <span>📧</span>
-                <a href="mailto:hariharatraders01@gmail.com" className="hover:text-gold-light transition-colors break-all">
-                  hariharatraders01@gmail.com
-                </a>
-              </p>
-              <p className="flex items-start gap-2">
-                <span>📍</span>
-                <span>Sambasiva Pet, Guntur – 522001</span>
-              </p>
+
+            <h4 className="font-semibold mb-4">Contact Us</h4>
+
+            <div className="space-y-2 text-sm text-white/70">
+
+              <p>📱 +91 8985350182</p>
+              <p>📧 hariharatraders01@gmail.com</p>
+              <p>📍 Guntur – 522001</p>
+
             </div>
 
-            {/* Social Links */}
-            <div className="mt-6">
-              <h5 className="font-semibold text-sm mb-3">Follow Us</h5>
-              <div className="flex gap-3">
-                {socialLinks.map((social) => (
-                  <a
-                    key={social.label}
-                    href={social.href}
-                    aria-label={social.label}
-                    className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-gold hover:scale-110 transition-all duration-300"
-                  >
-                    <social.icon className="w-5 h-5" />
-                  </a>
-                ))}
-              </div>
+            {/* Social Icons */}
+            <div className="mt-5 flex gap-3">
+
+              {socialLinks.map((social) => (
+                <a
+                  key={social.label}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-gold transition"
+                >
+                  <social.icon size={20} />
+                </a>
+              ))}
+
             </div>
+
           </div>
+
         </div>
 
-        {/* Bottom Bar */}
-        <div className="mt-12 pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-white/50">
-          <p>© {currentYear} AUM Organic Powders. All rights reserved.</p>
-          <p>Straight from Farm, Preserved for World.</p>
+        {/* Bottom */}
+        <div className="mt-12 pt-6 border-t border-white/10 text-center text-sm text-white/50">
+
+          © {currentYear} AUM Organic Powders. All Rights Reserved.
+
         </div>
+
       </div>
     </footer>
   );
