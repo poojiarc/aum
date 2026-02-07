@@ -3,13 +3,14 @@ import { cn } from '@/lib/utils';
 export const RECIPE_CATEGORIES = [
   { id: 'all', label: 'All', icon: '🍽️' },
   { id: 'Breakfast', label: 'Breakfast', icon: '🌅' },
+  { id: 'Main Course', label: 'Main Course', icon: '🍛' },
   { id: 'Soups', label: 'Soups', icon: '🍲' },
   { id: 'Condiments', label: 'Condiments', icon: '🫙' },
   { id: 'Beverages', label: 'Beverages', icon: '🥤' },
   { id: 'Desserts', label: 'Desserts', icon: '🍰' },
   { id: 'Health Drinks', label: 'Health Drinks', icon: '💚' },
   { id: 'Baby Food', label: 'Baby Food', icon: '👶' },
-  { id: 'Main Course', label: 'Main Course', icon: '🍛' },
+  { id: 'Skin Care', label: 'Skin Care', icon: '✨' },
 ] as const;
 
 interface RecipeCategoryFilterProps {
