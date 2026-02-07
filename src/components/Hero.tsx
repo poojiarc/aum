@@ -1,13 +1,15 @@
 import { useState, useEffect } from 'react';
 import { ShoppingCart, MessageCircle, ChevronDown } from 'lucide-react';
-import heroBg from '@/assets/hero-bg.jpg';
 
-// Hero background images - user can add more here
+// Hero background images
+import heroFarmIrrigation from '@/assets/hero/hero-farm-irrigation.jpg';
+import heroTomatoField from '@/assets/hero/hero-tomato-field.jpg';
+import heroOrganicPowders from '@/assets/hero/hero-organic-powders.jpg';
+
 const heroImages = [
-  heroBg,
-  // Add more images here when provided by user:
-  // heroBg2,
-  // heroBg3,
+  heroFarmIrrigation,
+  heroTomatoField,
+  heroOrganicPowders,
 ];
 
 const Hero = () => {
