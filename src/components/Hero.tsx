@@ -5,8 +5,10 @@ import { ShoppingCart, MessageCircle, ChevronDown } from 'lucide-react';
 import heroFarmIrrigation from '@/assets/hero/hero-farm-irrigation.jpg';
 import heroTomatoField from '@/assets/hero/hero-tomato-field.jpg';
 import heroOrganicPowders from '@/assets/hero/hero-organic-powders.jpg';
+import heroBg from '@/assets/hero/hero-bg.jpg';
 
 const heroImages = [
+  heroBg,
   heroFarmIrrigation,
   heroTomatoField,
   heroOrganicPowders,
@@ -21,7 +23,7 @@ const Hero = () => {
     
     const interval = setInterval(() => {
       setCurrentImageIndex((prev) => (prev + 1) % heroImages.length);
-    }, 5000);
+    }, 3000);
 
     return () => clearInterval(interval);
   }, []);
@@ -90,7 +92,7 @@ const Hero = () => {
           {/* Subheading */}
           <p 
             className="text-lg md:text-xl text-white/80 max-w-2xl mx-auto animate-fade-in-up"
-            style={{ animationDelay: '0.2s' }}
+            style={{ animationDelay: '0.5s' }}
           >
             Experience the authentic taste of nature with our solar-dried vegetable, 
             leafy, and fruit powders – preserving nutrition the traditional way.

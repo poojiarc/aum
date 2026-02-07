@@ -2,10 +2,11 @@ import { Product, CartItem } from './types';
 
 // Product data with pricing - ORDERED AS SPECIFIED
 export const products: Product[] = [
+
   // ========== RAW VEG POWDERS ==========
   { 
     id: 'beetroot', 
-    name: 'Beetroot Powder', 
+    name: 'Beetroot Powder (Beetroot)', 
     category: 'vegetable', 
     pricePerGram: 2, 
     benefits: 'Boosts stamina, lowers blood pressure, improves blood flow', 
@@ -15,7 +16,7 @@ export const products: Product[] = [
   },
   { 
     id: 'carrot', 
-    name: 'Carrot Powder', 
+    name: 'Carrot Powder (Gajjara)', 
     category: 'vegetable', 
     pricePerGram: 2, 
     benefits: 'Improves vision, promotes skin health, rich in antioxidants', 
@@ -25,7 +26,7 @@ export const products: Product[] = [
   },
   { 
     id: 'tomato', 
-    name: 'Tomato Powder', 
+    name: 'Tomato Powder (Tamata)', 
     category: 'vegetable', 
     pricePerGram: 2, 
     benefits: 'Rich in lycopene, supports heart health, improves skin', 
@@ -35,7 +36,7 @@ export const products: Product[] = [
   },
   { 
     id: 'ginger', 
-    name: 'Ginger Powder', 
+    name: 'Ginger Powder (Allam)', 
     category: 'vegetable', 
     pricePerGram: 2, 
     benefits: 'Improves digestion, relieves cold, boosts immunity', 
@@ -45,7 +46,7 @@ export const products: Product[] = [
   },
   { 
     id: 'lemon', 
-    name: 'Lemon Powder', 
+    name: 'Lemon Powder (Nimma Kaya)', 
     category: 'vegetable', 
     pricePerGram: 2, 
     benefits: 'Boosts immunity, aids detoxification, improves skin health', 
@@ -55,7 +56,7 @@ export const products: Product[] = [
   },
   { 
     id: 'green-banana', 
-    name: 'Green Banana Powder', 
+    name: 'Green Banana Powder (Pachi Arati Pandu)', 
     category: 'vegetable', 
     pricePerGram: 2, 
     benefits: 'Improves gut health, controls sugar levels, boosts energy', 
@@ -65,7 +66,7 @@ export const products: Product[] = [
   },
   { 
     id: 'bittergourd', 
-    name: 'Bitter Gourd Powder', 
+    name: 'Bitter Gourd Powder (Kakara Kaya)', 
     category: 'vegetable', 
     pricePerGram: 2, 
     benefits: 'Controls blood sugar, improves digestion, boosts immunity', 
@@ -77,7 +78,7 @@ export const products: Product[] = [
   // ========== LEAFY POWDERS ==========
   { 
     id: 'moringa', 
-    name: 'Moringa Powder', 
+    name: 'Moringa Powder (Munaga Aaku)', 
     category: 'leafy', 
     pricePerGram: 2, 
     benefits: 'Superfood with 90+ nutrients, anti-inflammatory, boosts energy', 
@@ -87,7 +88,7 @@ export const products: Product[] = [
   },
   { 
     id: 'spinach', 
-    name: 'Spinach Powder', 
+    name: 'Spinach Powder (Palakura)', 
     category: 'leafy', 
     pricePerGram: 2, 
     benefits: 'Improves bone health, boosts energy, rich in iron', 
@@ -97,7 +98,7 @@ export const products: Product[] = [
   },
   { 
     id: 'curry-leaf', 
-    name: 'Curry Leaf Powder', 
+    name: 'Curry Leaf Powder (Karivepaku)', 
     category: 'leafy', 
     pricePerGram: 2, 
     benefits: 'Promotes hair growth, controls diabetes, improves digestion', 
@@ -107,7 +108,7 @@ export const products: Product[] = [
   },
   { 
     id: 'pudina', 
-    name: 'Mint Leaves Powder', 
+    name: 'Mint Leaves Powder (Pudina Aaku)', 
     category: 'leafy', 
     pricePerGram: 2, 
     benefits: 'Aids digestion, freshens breath, relieves headaches', 
@@ -117,7 +118,7 @@ export const products: Product[] = [
   },
   { 
     id: 'kothimeera', 
-    name: 'Kothimeera Powder', 
+    name: 'Kothimeera Powder (Kothimeera Aaku)', 
     category: 'leafy', 
     pricePerGram: 2, 
     benefits: 'Detoxifies heavy metals, aids digestion, rich in antioxidants', 
@@ -127,7 +128,7 @@ export const products: Product[] = [
   },
   { 
     id: 'gongura', 
-    name: 'Gongura Powder', 
+    name: 'Gongura Powder (Gongura Aaku)', 
     category: 'leafy', 
     pricePerGram: 2, 
     benefits: 'Aids digestion, rich in iron, traditional Andhra superfood', 
@@ -137,7 +138,7 @@ export const products: Product[] = [
   },
   { 
     id: 'thotakura', 
-    name: 'Thotakura Powder', 
+    name: 'Thotakura Powder (Thotakura Aaku)', 
     category: 'leafy', 
     pricePerGram: 2, 
     benefits: 'Rich in calcium, improves bone health, boosts immunity', 
@@ -147,7 +148,7 @@ export const products: Product[] = [
   },
   { 
     id: 'neem', 
-    name: 'Neem Powder', 
+    name: 'Neem Powder (Vepa Aaku)', 
     category: 'leafy', 
     pricePerGram: 2, 
     benefits: 'Blood purifier, antibacterial, improves skin health', 
@@ -157,7 +158,7 @@ export const products: Product[] = [
   },
   { 
     id: 'betel-leaf', 
-    name: 'Betel Leaf Powder', 
+    name: 'Betel Leaf Powder (Tamalapaku)', 
     category: 'leafy', 
     pricePerGram: 2, 
     benefits: 'Improves digestion, antibacterial, boosts metabolism', 
@@ -167,7 +168,7 @@ export const products: Product[] = [
   },
   { 
     id: 'papaya-leaf', 
-    name: 'Papaya Leaf Powder', 
+    name: 'Papaya Leaf Powder (Boppayi Aaku)', 
     category: 'leafy', 
     pricePerGram: 2, 
     benefits: 'Supports immunity, improves platelet count, detoxifies body', 
@@ -179,7 +180,7 @@ export const products: Product[] = [
   // ========== FRUIT POWDERS ==========
   { 
     id: 'apple', 
-    name: 'Apple Powder', 
+    name: 'Apple Powder (Sebu)', 
     category: 'fruit', 
     pricePerGram: 2, 
     benefits: 'Supports heart health, aids weight loss, improves gut health', 
@@ -189,7 +190,7 @@ export const products: Product[] = [
   },
   { 
     id: 'banana', 
-    name: 'Banana Powder', 
+    name: 'Banana Powder (Arati Pandu)', 
     category: 'fruit', 
     pricePerGram: 2, 
     benefits: 'Instant energy, aids digestion, rich in potassium', 
@@ -199,17 +200,17 @@ export const products: Product[] = [
   },
   { 
     id: 'amla', 
-    name: 'Amla Powder', 
+    name: 'Amla Powder (Usirikaya)', 
     category: 'fruit', 
     pricePerGram: 2, 
     benefits: 'Richest source of Vitamin C, improves hair and skin', 
     nutrition: 'High in Vitamin C, Antioxidants, Fiber', 
     uses: 'Health drinks, hair care, cooking',
-    ingredients: 'Amla (Indian Gooseberry)'
+    ingredients: 'Amla'
   },
   { 
     id: 'amchur', 
-    name: 'Amchur Powder', 
+    name: 'Amchur Powder (Mamidi Podi)', 
     category: 'fruit', 
     pricePerGram: 2, 
     benefits: 'Improves digestion, enhances taste, rich in Vitamin C', 
