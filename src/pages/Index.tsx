@@ -1,6 +1,5 @@
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
-import FallingVeggies from "@/components/FallingVeggies";
 import DehydrationProcess from '@/components/DehydrationProcess';
 import MenuSection from '@/components/MenuSection';
 import RecipesSection from '@/components/RecipesSection';
@@ -19,7 +18,6 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       
       <FreeShippingBanner />
-      <FallingVeggies />
       <Header />
       <main>
         <Hero />
