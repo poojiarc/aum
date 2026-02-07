@@ -322,6 +322,8 @@ import {
   WHATSAPP_NUMBER,
   BULK_ORDER_THRESHOLD,
   getCategoryEmoji,
+  calculateBilling,
+  FREE_SHIPPING_THRESHOLD,
 } from '@/lib/data';
 import { productImages } from '@/lib/productImages';
 import { useState } from 'react';
@@ -512,53 +514,80 @@ const CartPanel = () => {
         </div>
 
         {/* Footer */}
-        {items.length > 0 && (
-          <div className="border-t p-4 space-y-4">
-            {/* Free Shipping Notice */}
-            {totalPrice >= 999 ? (
-              <div className="bg-organic-green/10 border border-organic-green/30 rounded-xl p-3 text-sm text-center">
-                <span className="text-organic-green font-semibold">🎉 You qualify for FREE SHIPPING!</span>
+        {items.length > 0 && (() => {
+          const billing = calculateBilling(totalPrice);
+          
+          return (
+            <div className="border-t p-4 space-y-4">
+              {/* Free Shipping Banner - Only show when below threshold */}
+              {totalPrice < FREE_SHIPPING_THRESHOLD && (
+                <div className="bg-gradient-to-r from-secondary/20 to-gold/20 border border-secondary/40 rounded-xl p-3 text-sm text-center animate-pulse">
+                  <span className="text-foreground font-medium">🚚 Add ₹{FREE_SHIPPING_THRESHOLD - totalPrice} more to get </span>
+                  <span className="text-gold font-bold">FREE DELIVERY!</span>
+                </div>
+              )}
+              
+              {/* Free Shipping Qualified */}
+              {totalPrice >= FREE_SHIPPING_THRESHOLD && (
+                <div className="bg-organic-green/10 border border-organic-green/30 rounded-xl p-3 text-sm text-center">
+                  <span className="text-organic-green font-semibold">🎉 You qualify for FREE SHIPPING!</span>
+                </div>
+              )}
+              
+              {/* Billing Summary */}
+              <div className="space-y-2 text-sm">
+                <div className="flex justify-between">
+                  <span className="text-muted-foreground">Total Weight</span>
+                  <span>
+                    {totalWeight >= 1000
+                      ? `${(totalWeight / 1000).toFixed(1)}kg`
+                      : `${totalWeight}g`}
+                  </span>
+                </div>
+                
+                <div className="flex justify-between">
+                  <span className="text-muted-foreground">Subtotal</span>
+                  <span>₹{billing.subtotal}</span>
+                </div>
+                
+                <div className="flex justify-between">
+                  <span className="text-muted-foreground">GST (5%)</span>
+                  <span>₹{billing.gstAmount}</span>
+                </div>
+                
+                <div className="flex justify-between">
+                  <span className="text-muted-foreground">Shipping</span>
+                  <span className={billing.isFreeShipping ? 'text-organic-green font-medium' : ''}>
+                    {billing.isFreeShipping ? 'FREE' : `₹${billing.shippingCharge}`}
+                  </span>
+                </div>
+                
+                <div className="border-t pt-2 flex justify-between text-lg font-bold">
+                  <span>Grand Total</span>
+                  <span className="text-primary">₹{billing.total}</span>
+                </div>
               </div>
-            ) : (
-              <div className="bg-secondary/10 border border-secondary/30 rounded-xl p-3 text-sm text-center">
-                <span className="text-muted-foreground">Add ₹{999 - totalPrice} more for </span>
-                <span className="text-gold font-semibold">FREE SHIPPING</span>
-              </div>
-            )}
-            
-            <div className="flex justify-between text-sm">
-              <span>Total Weight</span>
-              <span>
-                {totalWeight >= 1000
-                  ? `${(totalWeight / 1000).toFixed(1)}kg`
-                  : `${totalWeight}g`}
-              </span>
+
+              <button
+                onClick={handleWhatsAppCheckout}
+                className="w-full btn-whatsapp py-3"
+              >
+                <MessageCircle className="w-5 h-5" />
+                Order via WhatsApp
+              </button>
+
+              {/* Trust Badges */}
+              <TrustBadges variant="inline" className="pt-2" />
+
+              <button
+                onClick={() => setIsCartOpen(false)}
+                className="w-full text-sm py-2"
+              >
+                Continue Shopping
+              </button>
             </div>
-
-            <div className="flex justify-between text-lg font-bold">
-              <span>Total</span>
-              <span>₹{totalPrice}</span>
-            </div>
-
-            <button
-              onClick={handleWhatsAppCheckout}
-              className="w-full btn-whatsapp py-3"
-            >
-              <MessageCircle className="w-5 h-5" />
-              Order via WhatsApp
-            </button>
-
-            {/* Trust Badges */}
-            <TrustBadges variant="inline" className="pt-2" />
-
-            <button
-              onClick={() => setIsCartOpen(false)}
-              className="w-full text-sm py-2"
-            >
-              Continue Shopping
-            </button>
-          </div>
-        )}
+          );
+        })()}
       </div>
     </>
   );

@@ -157,9 +157,12 @@ import {
 import { useCart } from '@/context/CartContext';
 import logo from '@/assets/logo.jpg';
 
+import { UtensilsCrossed } from 'lucide-react';
+
 const navItems = [
   { label: 'Home', href: '/#home', icon: Home },
   { label: 'Menu', href: '/#menu', icon: FileText },
+  { label: 'Recipes', href: '/#recipes', icon: UtensilsCrossed },
   { label: 'Services', href: '/#services', icon: Settings },
   { label: 'About Us', href: '/#about', icon: Info },
   { label: 'Contact', href: '/#contact', icon: Phone },
