@@ -294,23 +294,38 @@ export const services = [
   { icon: '🏭', title: 'Custom Orders', description: 'Tailored solutions for specific product requirements' },
 ];
 
-export const generateWhatsAppMessage = (cartItems: CartItem[], totalWeight: number, totalPrice: number): string => {
-  const billing = calculateBilling(totalPrice);
-  
-  const itemsList = cartItems.map(item => 
-    `• ${item.product.name} - ${item.quantity}g - ₹${item.price}`
-  ).join('\n');
+export const generateWhatsAppMessage = (
+  items,
+  totalWeight,
+  totalPrice,
+  name,
+  phone,
+  address
+) => {
 
-  return encodeURIComponent(
-    `Hello AUM Organic Powders,\n\nI want to order:\n\n${itemsList}\n\n` +
-    `Subtotal: ₹${billing.subtotal}\n` +
-    `GST (5%): ₹${billing.gstAmount}\n` +
-    `Shipping: ${billing.isFreeShipping ? 'FREE' : `₹${billing.shippingCharge}`}\n` +
-    `Total Weight: ${totalWeight >= 1000 ? `${(totalWeight/1000).toFixed(1)}kg` : `${totalWeight}g`}\n` +
-    `Grand Total: ₹${billing.total}\n\n` +
-    `Delivery Location: [Please add your address]\n\n` +
-    `Thank you!`
-  );
+  let message = `New Order - AUM Organic Powders\n\n`;
+
+  // Customer Details (Each on New Line)
+  message += `Name: ${name}\n`;
+  message += `Phone: ${phone}\n`;
+  message += `Address: ${address}\n\n`;
+
+  message += `Order Details:\n\n`;
+
+  // Product List
+  items.forEach((item, index) => {
+    message += `${index + 1}. ${item.product.name}\n`;
+    message += `   ${item.packSize}g × ${item.packCount}\n`;
+    message += `   Price: ₹${item.price}\n\n`;
+  });
+
+  // Summary
+  message += `Total Weight: ${totalWeight}g\n`;
+  message += `Subtotal: ₹${totalPrice}\n\n`;
+
+  message += `Thank you for ordering from AUM Organic Powders`;
+
+  return encodeURIComponent(message);
 };
 
 export const WHATSAPP_NUMBER = '918985350182';
