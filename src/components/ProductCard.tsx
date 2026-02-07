@@ -461,6 +461,16 @@ const ProductCard = ({ product }: ProductCardProps) => {
 
           <div className="space-y-4 pt-2">
 
+            {/* Ingredients - 100% Natural */}
+            <div className="bg-organic-green/10 border border-organic-green/30 rounded-xl p-3">
+              <h4 className="font-semibold text-sm text-organic-green mb-1">
+                🌿 Ingredients
+              </h4>
+              <p className="text-foreground font-medium">
+                100% {product.ingredients} – No Additives
+              </p>
+            </div>
+
             <div>
               <h4 className="font-semibold text-sm text-muted-foreground mb-1">
                 ✨ Benefits

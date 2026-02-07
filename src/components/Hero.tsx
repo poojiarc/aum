@@ -1,7 +1,29 @@
+import { useState, useEffect } from 'react';
 import { ShoppingCart, MessageCircle, ChevronDown } from 'lucide-react';
 import heroBg from '@/assets/hero-bg.jpg';
 
+// Hero background images - user can add more here
+const heroImages = [
+  heroBg,
+  // Add more images here when provided by user:
+  // heroBg2,
+  // heroBg3,
+];
+
 const Hero = () => {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  // Auto-rotate background images every 5 seconds
+  useEffect(() => {
+    if (heroImages.length <= 1) return;
+    
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % heroImages.length);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   const scrollToMenu = () => {
     document.getElementById('menu')?.scrollIntoView({ behavior: 'smooth' });
   };
@@ -12,11 +34,16 @@ const Hero = () => {
 
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-10">
-      {/* Background Image */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${heroBg})` }}
-      />
+      {/* Background Images with Crossfade */}
+      {heroImages.map((img, index) => (
+        <div 
+          key={index}
+          className={`absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000 ${
+            index === currentImageIndex ? 'opacity-100' : 'opacity-0'
+          }`}
+          style={{ backgroundImage: `url(${img})` }}
+        />
+      ))}
       
       {/* Gradient Overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-primary/70 via-primary/50 to-primary/80" />

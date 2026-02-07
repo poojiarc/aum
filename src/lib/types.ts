@@ -1,11 +1,12 @@
 export interface Product {
   id: string;
   name: string;
-  category: 'vegetable' | 'leafy' | 'fruit';
+  category: 'vegetable' | 'leafy' | 'fruit' | 'premix';
   pricePerGram: number;
   benefits: string;
   nutrition: string;
   uses: string;
+  ingredients: string;
   image?: string;
 }
 
